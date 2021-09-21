@@ -46,3 +46,7 @@ bastion_IP_internal = 10.128.0.8
 
 внутренний ип
 someinternalhost_IP = 10.128.0.8
+
+
+testapp_IP = 35.198.167.169
+testapp_port = 9292
