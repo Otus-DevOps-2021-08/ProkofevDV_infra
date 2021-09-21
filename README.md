@@ -1,6 +1,8 @@
 Cloud bastion homework
+
 bastion_IP = 84.252.137.65
 someinternalhost_IP = 10.128.0.8
+
 Подключение к someinternalhost в одну команду из вашего рабочего устройства
 ssh -A -i ~/.ssh/otus-yandex-cloud -J appuser@178.154.252.46 appuser@10.130.0.34
 Подключения из консоли при помощи команды вида ssh someinternalhost из локальной консоли
@@ -48,5 +50,8 @@ bastion_IP_internal = 10.128.0.8
 someinternalhost_IP = 10.128.0.8
 
 
-testapp_IP = 35.198.167.169
+Задание со звездочкой: В команду созданий машины добавляется строчка --metadata-from-file user-data=startupcloud.yaml 
+Сам файл startupcloud.yaml в корне репозитория
+
+testapp_IP = 130.193.51.152
 testapp_port = 9292
