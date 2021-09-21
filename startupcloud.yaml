@@ -1,0 +1,10 @@
+#cloud-config
+users:
+  - name: yc-user
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+      ssh-authorized-keys:
+        -ssh-rsa AQAAAABVIW4HAATuwdrb7OK_6k45oWSwNTGXe38
+runcmd:
+  - curl https://raw.githubusercontent.com/Otus-DevOps-2021-08/ProkofevDV_infra/cloud-testapp/install_ruby.sh | bash && curl https://raw.githubusercontent.com/Otus-DevOps-2021-08/ProkofevDV_infra/cloud-testapp/install_mongodb.sh | bash && curl https://raw.githubusercontent.com/Otus-DevOps-2021-08/ProkofevDV_infra/cloud-testapp/deploy.sh | bash
