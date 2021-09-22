@@ -2,7 +2,7 @@
   "builders": [
     {
       "type": "yandex",
-      "service_account_key_file": "/home/dmitry/otus-devops-course/key.json",
+      "service_account_key_file": "{{user `SA_KEY_FILE_PATH`}}",
       "folder_id": "b1gdgo23higihim4bc9u",
       "source_image_family": "ubuntu-1604-lts",
       "image_name": "reddit-base-{{timestamp}}",
