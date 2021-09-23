@@ -1,8 +1,6 @@
 Cloud bastion homework
-
 bastion_IP = 84.252.137.65
 someinternalhost_IP = 10.128.0.8
-
 Подключение к someinternalhost в одну команду из вашего рабочего устройства
 ssh -A -i ~/.ssh/otus-yandex-cloud -J appuser@178.154.252.46 appuser@10.130.0.34
 Подключения из консоли при помощи команды вида ssh someinternalhost из локальной консоли
@@ -55,3 +53,22 @@ someinternalhost_IP = 10.128.0.8
 
 testapp_IP = 62.84.120.10
 testapp_port = 9292
+
+# Prokofyev_DV_infra
+
+### ДЗ№5: Подготовка базового образа VM при помощи Packer.
+
+Создаём полный образ с переменными из файла
+
+```
+cd packer
+
+packer build -var-file ../variables.json immutable.json
+
+```
+Запускаем создание виртуалки через yc
+
+```
+cd ./config-scripts/
+./create-reddit.vm.sh
+```
