@@ -37,7 +37,7 @@ someinternalhost_IP = 10.128.0.19
 Задание со звездочкой: В команду созданий машины добавляется строчка --metadata-from-file user-data=startupcloud.yaml 
 Сам файл startupcloud.yaml в корне репозитория
 
-testapp_IP = 62.84.120.10
+testapp_IP = 62.84.115.153
 testapp_port = 9292
 
 # Prokofyev_DV_infra
