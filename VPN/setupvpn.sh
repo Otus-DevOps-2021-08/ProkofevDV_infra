@@ -2,10 +2,10 @@
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
-sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list << EOF
+sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
 deb https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse
 
-sudo tee /etc/apt/sources.list.d/pritunl.list << EOF
+sudo tee /etc/apt/sources.list.d/pritunl.list
 deb https://repo.pritunl.com/stable/apt bionic main
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv E162F504A20CDF15827F718D4B7C549A058F8B6B
