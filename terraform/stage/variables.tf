@@ -7,7 +7,7 @@ variable folder_id {
 variable zone {
   description = "Zone"
   # Значение по умолчанию
-  default     = "ru-central1-a"
+  default = "ru-central1-a"
 }
 variable public_key_path {
   # Описание переменной
@@ -34,4 +34,12 @@ variable "internal_app_port" {
 }
 variable "app_instances_count" {
   default = 1
+}
+variable app_disk_image {
+  description = "Disk image for reddit app"
+  default     = "reddit-app-base"
+}
+variable db_disk_image {
+  description = "Disk image for reddit app"
+  default     = "reddit-app-base"
 }
