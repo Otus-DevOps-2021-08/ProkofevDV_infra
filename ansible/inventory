@@ -4,13 +4,3 @@ appserver ansible_host=62.84.115.86
 
 [db]
 dbserver ansible_host=62.84.116.218
-
-
-ansible app -m git -a \
- 'repo=https://github.com/express42/reddit.git dest=/home/appuser/reddit'
-appserver | SUCCESS => {
- "after": "61a7f75b3d3e6f7a8f279896fb4e9f0556e1a70a",
- "before": "5c217c565c1122c5343dc0514c116ae816c17ca2",
- "changed": false,
- "remote_url_changed": false
-}
