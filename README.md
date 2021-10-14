@@ -58,3 +58,17 @@ packer build -var-file ../variables.json immutable.json
 cd ./config-scripts/
 ./create-reddit.vm.sh
 ```
+
+Команды по ансибл:
+
+пинг всех хостов и блока апп
+ansible all -m ping -i inventory.yml
+
+выполнение нескольких команд на удаленном хосте через модуль шелл
+//ansible app -m command -a 'ruby -v; bundler -v'
+ansible app -m shell -a 'ruby -v; bundler -v'
+
+// ansible db -m command -a 'systemctl status mongod'
+// ansible db -m shell -a 'systemctl status mongod'
+// модуль сервис ansible db -m service -a name=mongod
+ansible app -m command -a 'ruby -v'
