@@ -72,3 +72,6 @@ ansible app -m shell -a 'ruby -v; bundler -v'
 // ansible db -m shell -a 'systemctl status mongod'
 // модуль сервис ansible db -m service -a name=mongod
 ansible app -m command -a 'ruby -v'
+
+запуск плейбука с тегами:
+ansible-playbook reddit_app.yml --check --limit app --tags app-tag
