@@ -2,17 +2,24 @@ stages:
   - build
   - test
   - deploy
-tags:
-  - docker
+
 variables:
   DATABASE_URL: 'mongodb://mongo/user_posts'
+
 before_script:
   - cd reddit
   - bundle install
+
 build_job:
   stage: build
   script:
     - echo 'Building'
+  tags:
+    - docker
+    - linux
+    - ubuntu
+    - xenial
+
 
 test_unit_job:
   stage: test
@@ -20,6 +27,7 @@ test_unit_job:
     - mongo:latest
   script:
     - ruby simpletest.rb
+
 test_integration_job:
   stage: test
   script:
