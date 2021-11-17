@@ -75,3 +75,36 @@ ansible app -m command -a 'ruby -v'
 
 запуск плейбука с тегами:
 ansible-playbook reddit_app.yml --check --limit app --tags app-tag
+
+
+GitLab CI
+чтобы сменить руту пароль сразу после установки
+> user.password = 'secret_pass'
+> user.password_confirmation = 'secret_pass'
+> user.save
+> exit
+
+Добавим remote 
+> git checkout -b gitlab-ci-1
+> git remote add gitlab http://51.250.0.207/homework/example.git
+
+Установим раннер внутри докера
+> docker run -d --name gitlab-runner --restart always -v /srv/gitlabrunner/config:/etc/gitlab-runner -v /var/run/docker.sock:/var/run/docker.sock gitlab/gitlab-runner:latest
+
+Зарегаем раннер
+> docker exec -it gitlab-runner gitlab-runner register \
+--url http://51.250.0.207/ \
+--non-interactive \
+--locked=false \
+--name DockerRunner \
+--executor docker \
+--docker-image alpine:latest \
+--registration-token 1N7XybydesVDRDsysxeh \
+--tag-list "linux,xenial,ubuntu,docker" \
+--run-untagged
+
+Добавьте исходный код reddit в репозиторий:
+git clone https://github.com/express42/reddit.git && rm -rf ./reddit/.git
+git add reddit/
+git commit -m "Add reddit app"
+git push gitlab gitlab-ci-1
