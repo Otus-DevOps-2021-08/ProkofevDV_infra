@@ -7,7 +7,7 @@ variables:
   DATABASE_URL: 'mongodb://mongo/user_posts'
 
 before_script:
-  - apk update && apk add bash
+  - apt-get install -y ruby-full ruby-bundler build-essential
   - cd reddit
   - bundle install
 
