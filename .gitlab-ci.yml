@@ -1,13 +1,12 @@
 stages:
   - build
   - test
-  - deploy
+  - review
 
 variables:
   DATABASE_URL: 'mongodb://mongo/user_posts'
 
 before_script:
-  - apt-get install -y ruby-full ruby-bundler build-essential
   - cd reddit
   - bundle install
 
@@ -34,7 +33,10 @@ test_integration_job:
   script:
     - echo 'Testing 2'
 
-deploy_job:
-  stage: deploy
+deploy_dev_job :
+  stage: review
   script:
     - echo 'Deploy'
+  environment:
+    name: dev
+    url: http://dev.example.com
